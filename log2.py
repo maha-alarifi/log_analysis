@@ -1,6 +1,7 @@
 import psycopg2 
 DBNAME = "news"
 
+#Please note that thia script is run using python2 
 
 def get_articles():
     print("#1. What are the most popular three articles of all time?")
