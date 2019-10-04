@@ -15,6 +15,8 @@
 - clone this repository
 - Download this database : https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip
 - unzipp the database please :)
+- move the data base into the working repository
+- in the terminal please run this command : psql -d news -f newsdata.sql
 
 #### Third (Running the Virtual machine)
 In order to complete these steps you have to be inside vagrant file
