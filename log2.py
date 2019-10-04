@@ -1,7 +1,8 @@
-import psycopg2 
+#!/usr/bin/env python
+import psycopg2
 DBNAME = "news"
 
-#Please note that thia script is run using python2 
+#Please note that thia script is run using python2
 
 def get_articles():
     print("#1. What are the most popular three articles of all time?")
@@ -21,11 +22,11 @@ def get_authors():
     db.close()
     return (authors)
 
-def get_bad_days(): 
+def get_bad_days():
     print("3. On which days did more than 1% of requests lead to errors?")
     db = psycopg2.connect(database=DBNAME)
     c = db.cursor()
-    c.execute("select all_log.date from all_log, error_log where all_log.date = error_log.date and (all_logs/100)<error_logs;") 
+    c.execute("select all_log.date from all_log, error_log where all_log.date = error_log.date and (all_logs/100)<error_logs;")
     bad_days = c.fetchall()
     db.close()
     return (bad_days)
@@ -38,8 +39,8 @@ def get_bad_days():
 
 if __name__ == "__main__":
      for i in get_articles():
-         print(i)
+         print(i.title)
      for i in get_authors():
-         print(i)
+         print(i.name)
      for i in get_bad_days():
          print(i)
